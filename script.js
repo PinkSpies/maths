@@ -11,7 +11,7 @@ level1 = document.getElementById("level1");
 level2 = document.getElementById("level2");
 score = document.getElementById("score");
 document.getElementById("continue").style.display = 'none';
-entertocontinue = false
+entertocontinue = false;
 inputvalue = "";
 step1 = "";
 step2 = "";
@@ -19,7 +19,6 @@ ans = 0;
 addval = 0;
 multval = 0;
 addorsubt = 0;
-varval = 0;
 level = 1;
 scorevalue = 0;
 function GenInt (max) {
@@ -32,25 +31,22 @@ function GenerateQuestion () {
     document.getElementById("continue").style.display = 'none';
     document.getElementById("myinput").style.display = 'block';
     usedVar = vars.charAt(Math.floor(Math.random() * vars.length));
-    if (level = 1) {
-        ans = GenInt(9);
-        addval = GenInt(9);
-        multval = GenInt(8) + 1;
-        addorsubt = GenInt(2);
-        answerformatted = `${usedVar} = ${ans}`;
-        step2 = `${multval}${usedVar} = ${ans * multval}`;
-        if (addorsubt > 1) {
-            step1 = `${multval}${usedVar} + ${addval} = ${ans * multval + addval}`;
-            addorsubttext = "subtract "
+    ans = GenInt(9);
+    addval = GenInt(9);
+    multval = GenInt(8) + 1;
+    addorsubt = GenInt(2);
+    answerformatted = `${usedVar} = ${ans}`;
+    step2 = `${multval}${usedVar} = ${ans * multval}`;
+    if (addorsubt > 1) {
+        step1 = `${multval}${usedVar} + ${addval} = ${ans * multval + addval}`;
+        addorsubttext = "subtract "
 
-        } else {
-            step1 = `${multval}${usedVar} - ${addval} = ${ans * multval - addval}`;
-            addorsubttext = "add "
+    } else {
+        step1 = `${multval}${usedVar} - ${addval} = ${ans * multval - addval}`;
+        addorsubttext = "add "
 
 
-        };
     };
-    
     varnexttoinput.innerHTML = usedVar + " = ";
     question.innerHTML = step1;
     document.getElementById("explanation").style.display = 'none';
