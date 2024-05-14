@@ -49,9 +49,7 @@ function GenerateQuestion () {
 
 
         };
-    } else {
-
-    }
+    };
     
     varnexttoinput.innerHTML = usedVar + " = ";
     question.innerHTML = step1;
